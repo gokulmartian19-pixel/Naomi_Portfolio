@@ -1,0 +1,26 @@
+html {
+  font-family: 'Saans', sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+  background: #c43670;
+  color: #f0ccdf;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #c43670;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}

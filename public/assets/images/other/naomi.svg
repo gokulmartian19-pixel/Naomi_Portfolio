@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7200 1770" width="7200" height="1770">
+  <style>
+    @font-face {
+      font-family: "Saans";
+      src: url("../fonts/Saans_Bold.woff2") format("woff2");
+      font-weight: 700;
+    }
+    .word {
+      font-family: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1950px;
+      fill: #F0CCDF;
+      letter-spacing: -0.04em;
+    }
+  </style>
+  <text x="0" y="1520" class="word">NAOMI</text>
+</svg>
