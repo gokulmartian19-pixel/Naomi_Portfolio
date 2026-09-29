@@ -56,50 +56,21 @@ function App() {
       heroObserver.observe(hero)
     }
 
-    const applyServiceStack = () => {
-      const cards = [...document.querySelectorAll('.service-card')]
-      const title = document.querySelector('#services-title')
-      const isDesktop = window.innerWidth >= 768
+    const serviceCards = document.querySelectorAll('.service-card')
+    const serviceCardObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' })
 
-      if (!isDesktop || !cards.length || !title) {
-        return
-      }
-
-      const handleScroll = () => {
-        const viewport = window.innerHeight
-        const titleRect = title.getBoundingClientRect()
-        const titleShift = Math.min(Math.max((viewport * 0.22 - titleRect.top) / 3, 0), 120)
-        title.style.transform = `translateY(-${titleShift}px)`
-
-        cards.forEach((card, index) => {
-          const cardInner = card.querySelector('.service-card-inner')
-          const rect = card.getBoundingClientRect()
-          const progress = Math.min(Math.max((viewport * 0.28 - rect.top) / (viewport * 0.9), 0), 1)
-          const lift = -(cards.length - index) * 18 * progress
-          const scale = 0.82 + index * 0.045 + progress * 0.08
-          const rotate = (index % 2 === 0 ? 1 : -1) * (1.5 + progress * 2.5)
-
-          if (cardInner) {
-            cardInner.style.transform = `translateY(${lift}vh) scale(${scale}) rotateZ(${rotate}deg)`
-          }
-        })
-      }
-
-      handleScroll()
-      window.addEventListener('scroll', handleScroll, { passive: true })
-      window.addEventListener('resize', handleScroll)
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-        window.removeEventListener('resize', handleScroll)
-      }
-    }
-
-    const cleanupStack = applyServiceStack()
+    serviceCards.forEach((card) => serviceCardObserver.observe(card))
 
     return () => {
       heroObserver?.disconnect()
-      if (cleanupStack) cleanupStack()
+      serviceCardObserver.disconnect()
     }
   }, [])
 

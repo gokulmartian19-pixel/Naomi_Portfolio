@@ -8,24 +8,26 @@ export default function HeroSection() {
             alt="Animated Naomi portfolio banner"
             className="hero-gif"
           />
-        </div>
 
-        <div className="hero-title-container">
-          <div className="hero-wordmark-wrap">
-            <div className="hero-wordmark-inner">
-              <h1 className="hero-wordmark-text">NAOMI SANCHEZ</h1>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-tagline-container">
-          <div className="hero-tagline-row">
-            <div className="hero-tagline-mask hero-tagline-left">
-              <p className="hero-tagline-text">Content Creator &amp; Storyteller</p>
+          <div className="hero-copy-overlay">
+            <div className="hero-title-container">
+              <div className="hero-wordmark-wrap">
+                <div className="hero-wordmark-inner">
+                  <h1 className="hero-wordmark-text">NAOMI SANCHEZ</h1>
+                </div>
+              </div>
             </div>
 
-            <div className="hero-tagline-mask hero-tagline-right">
-              <p className="hero-tagline-serif">Scaling brands&apos; reach &amp; impact</p>
+            <div className="hero-tagline-container">
+              <div className="hero-tagline-row">
+                <div className="hero-tagline-mask hero-tagline-left">
+                  <p className="hero-tagline-text">Content Creator &amp; Storyteller</p>
+                </div>
+
+                <div className="hero-tagline-mask hero-tagline-right">
+                  <p className="hero-tagline-serif">Scaling brands&apos; reach &amp; impact</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

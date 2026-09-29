@@ -2,9 +2,13 @@ export default function AboutSection({ currentFact }) {
   return (
     <section id="about" className="about-section">
       <div className="about-intro-wrap">
-        <p className="about-label">(About Naomi)</p>
-        <p className="about-statement">
-          I&apos;m a passionate marketing enthusiast driven by creativity and curiosity. While I&apos;m early in my professional journey, my love for marketing runs deep—from digital advertising to content creation. I thrive on spotting trends and bringing fresh perspectives to every project.
+        <p className="about-label">(ABOUT NAOMI)</p>
+        <h2 className="about-statement">
+          <span>I&apos;m a marketing enthusiast</span>
+          <span>driven by creativity &amp; curiosity.</span>
+        </h2>
+        <p className="about-copy">
+          While I&apos;m early in my professional journey, my love for marketing runs deep—from digital advertising to content creation. I thrive on spotting trends and bringing fresh perspectives to every project.
         </p>
       </div>
 
