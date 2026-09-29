@@ -42,15 +42,18 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const headerItems = document.querySelectorAll('.hero-wordmark-inner, .hero-tagline-text, .hero-tagline-serif, .hero-star-inner')
+    const hero = document.querySelector('.hero-section')
+    const heroObserver = hero
+      ? new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            hero.classList.add('is-visible')
+            heroObserver.disconnect()
+          }
+        }, { threshold: 0.1 })
+      : null
 
-    const revealHeader = () => {
-      headerItems.forEach((item, index) => {
-        item.style.transition = 'transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease'
-        item.style.opacity = '1'
-        item.style.transform = 'translateY(0)'
-        item.style.transitionDelay = `${index * 80}ms`
-      })
+    if (hero && heroObserver) {
+      heroObserver.observe(hero)
     }
 
     const applyServiceStack = () => {
@@ -92,14 +95,10 @@ function App() {
       }
     }
 
-    const timer = window.requestAnimationFrame(() => {
-      revealHeader()
-    })
-
     const cleanupStack = applyServiceStack()
 
     return () => {
-      window.cancelAnimationFrame(timer)
+      heroObserver?.disconnect()
       if (cleanupStack) cleanupStack()
     }
   }, [])
