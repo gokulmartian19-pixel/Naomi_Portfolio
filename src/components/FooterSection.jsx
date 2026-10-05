@@ -45,7 +45,7 @@ export default function FooterSection({ timeLabel, onOpenContact }) {
               </a>
             </li>
           </ul>
-          <p className="footer-copy-mob">©2025 Naomi Sanchez</p>
+          <p className="footer-copy-mob">©2026 Naomi Sanchez</p>
           <ul className="footer-social-col" style={{ alignItems: 'flex-end' }}>
             <li>
               <a href="https://unsplash.com/" target="_blank" rel="noreferrer" className="footer-social-link-mob">
@@ -61,7 +61,7 @@ export default function FooterSection({ timeLabel, onOpenContact }) {
         </div>
 
         <div className="footer-bottom-desktop">
-          <p className="footer-desktop-copy">©2025 Naomi Sanchez</p>
+          <p className="footer-desktop-copy">©2026 Naomi Sanchez</p>
 
           <ul style={{ display: 'flex', gap: '1rem' }}>
             {footerLinks.map((item) => (
